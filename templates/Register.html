@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/register.css' %}">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form action="/postsignup/" method="post">
+      {% csrf_token %}
+      <div class="input-box">
+      <input type="text" placeholder="First name" name="fname" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Second name" name="sname" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Email" name="email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" name="password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Repeat password" name="rpassword" required>
+      </div>
+      <div class="policy">
+        <input type="checkbox" name="accept">
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Register" onclick="location.href='{% url 'signup' %}'">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="login.html">Login </a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
