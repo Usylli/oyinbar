@@ -1,3 +1,4 @@
+from multiprocessing import context
 import pyrebase 
 import os
 from . import settings
@@ -44,7 +45,7 @@ def postsign(request):
     print(user['idToken'])
     session_id=user['idToken']
     request.session['uid'] = str(session_id)
-    return render(request, "welcome.html",{"e":email})
+    return render(request, "main.html",{"e":email})
 
 def logout(request):
     auth.logout(request)
@@ -72,3 +73,13 @@ def postsignup(request):
     users_ref = ref.child('users').child(uid).child("details")
     users_ref.set(data)
     return render(request, "login.html")
+
+def indexView(request):
+    product_ref = ref.child('games')
+    products_list = product_ref.get()
+    print(products_list)
+    context = {
+        'products_list': products_list,
+    }
+    return render(request, 'main.html', context)
+    
