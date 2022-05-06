@@ -1,0 +1,316 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+header {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    position: relative;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section{
+    margin-top: 20px;
+}
+
+.logo {
+    width: 50px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    padding: 28px 0;
+}
+
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 0;
+    position: relative;
+}
+
+
+.nav-links li a::after {
+    content: '';
+    background: rgb(15, 38, 168);
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+
+.nav-links li a:hover::after {
+    width: 100%;
+
+}
+
+.info-block{
+    max-width: 550px;
+    margin: 0 auto;
+    
+}
+
+.circle-image img{
+    
+    border-radius: 50%;
+    max-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.info{
+    border: solid rgb(0, 0, 0);
+    opacity: 45%;
+    padding: 10px;
+    margin: 25px;
+    text-align: center;
+    border-radius: 8px;
+}
+.info p{
+    font-size: 18px;
+    opacity: 90%;
+}
+.info2{
+    
+    padding: 10px;
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 18px;
+}
+.v-align{
+    vertical-align: middle;
+}
+.btn {
+    background: #488fe1c7;
+    color: #fff;
+    border-radius: 15px;
+    display: block;
+    width: 255px;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+hr{
+    border: none;
+    background: #11323c;
+    height: 4px;
+    opacity: 20%;
+    margin:  0;
+}
+
+
+
+
+
+
+
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+
+.offer {
+    margin-top: 60px;
+    
+}
+.offer h1{
+    font-size: 40px;
+}
+.offer hr{
+    width: 600px;
+    padding: 0;
+    margin: 0;
+}
+.btn {
+    background: #e4a735;
+    color: #fff;
+    border-radius: 100px;
+    display: block;
+    width: 205px;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.image-section1 {
+    width: 600px;
+}
+
+.total{
+    border: solid black;
+    width: 350px;
+    height: 450px;
+    margin: 0;
+    padding: 0;
+    
+}
+.btn-2 {
+    background: #e4a735;
+    color: #fff;
+    border-radius: 100px;
+    display: block;
+    width: 350px;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 60px;
+}
+.total h1{
+    font-size: 70px;
+    margin: 20px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.total h3{
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.item{
+    width: 750px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.im2{
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-right: 220px;
+}
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.im img{
+    width: 200px;
+}

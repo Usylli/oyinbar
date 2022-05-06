@@ -1,0 +1,68 @@
+{% load static %}
+{% load marktags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/cart_prof.css' %}">
+    <title>OYINBAR - Cart page</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="v-align"><a href="{% url 'index' %}"><img src="{% static '/images/logo.png' %}" alt="app-logo" class="logo"></a></div>
+                <ul class="nav-links">
+                    
+                    <li><a href="{% url 'profile' %}" class="btn-header">User page</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="wrapper">
+                <div class="offer">
+                    
+                    <h1>MY ORDERS:</h1>
+                    <br>
+                    <br>
+                    <hr>
+                    {% for product in products_list %}
+                    <div class="item">
+                        
+                        <div class="im">
+                            <img src="{{ product.img }}" alt="{{ product.name }}">
+                        </div>
+                        <div class="im2">
+                            <h3>{{ product.name }}</h3>
+                            <br>
+                            <br>
+                            <p>{{ product.price }}₸</p>
+                        </div>
+                        <div class="im3"><button type="submit" onclick="location.href='{% url 'delete_from_cart' product.id %}'">X</button></div>
+                    </div>
+                    <hr>  
+                    {% endfor %}  
+                </div>
+    
+    
+                <div class="image-main">
+                    <div class="total">
+                        <h1></h1>
+                        <h1>TOTAL</h1>
+                        <h3>{% total_price %}₸</h3>
+                    </div>
+                    
+                    <div class="buy">
+                        <a href="#" class="btn-2"><h1>BUY</h1></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

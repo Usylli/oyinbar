@@ -15,14 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import indexView, signIn, postsign, logout, signUp, postsignup, add_cart, cartView, delete_from_cart, profileView, logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.indexView, name="index"),
-    path('signIn/',views.signIn, name="signIn"),
-    path('postsign/',views.postsign),
-    path('logout/', views.logout, name="log"),
-    path('signup/', views.signUp, name="signup"),
-    path('postsignup/', views.postsignup, name="postsignup"),
+    path('', indexView, name="index"),
+    path('signIn/', signIn, name="signIn"),
+    path('postsign/', postsign),
+    path('logout/', logout, name="log"),
+    path('signup/', signUp, name="signup"),
+    path('postsignup/', postsignup, name="postsignup"),
+    path('add_cart/<int:game_id>',add_cart, name="add_cart"),
+    path('cart', cartView, name="cart"),
+    path('delete_cart/<int:game_id>', delete_from_cart, name="delete_from_cart"),
+    path('profile', profileView, name="profile"),
+    path('logout', logout, name="logout")
 ]

@@ -1,4 +1,5 @@
 {% load static %}
+{% load marktags %}
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en" dir="ltr">
@@ -15,8 +16,15 @@
   <header>
     <div class="nav container">
       <a href="#" class="logo">Oyinbar Shop</a>
-      <a href="{% url 'signIn' %}"><i class='bx bx-user' id="cart-user" ></i></a>
-      <i class='bx bx-shopping-bag' id="cart-icon"></i>
+      {% if request.COOKIES.access_token %}
+      <a href="{% url 'profile' %}"><i class='bx bx-user' id="cart-user" ></i>
+        <p style="display: inline">{% get_email %}</p>
+      {% else %}
+      <a href="{% url 'signIn' %}"><i class='bx bx-user' id="cart-user" ></i>
+      <p style="display: inline">Log In</p>
+      {% endif %}
+      </a>
+      <a href="{% url 'cart' %}"><i class='bx bx-shopping-bag' id="cart-icon"></i></a>
       <!-- Cart -->
       <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
@@ -55,7 +63,7 @@
           <img src="{{ product.img }}" alt="{{ product.name }}" class="product-img">
           <h2 class="product-title">{{ product.name }}</h2>
           <span class="price">{{ product.price }}₸</span>
-          <i class='bx bx-shopping-bag add-cart'></i>
+          <button type="submit" onclick="location.href='{% url 'add_cart' forloop.counter0 %}'" name='addcart'><i class='bx bx-shopping-bag add-cart'></i></button>
         </div>
         {% endfor %}
       </div>

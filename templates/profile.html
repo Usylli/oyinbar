@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/cart_prof.css' %}">
+    <title>OYINBAR - Profile page</title>
+</head>
+<body>
+    <header> 
+        <div class="container">
+            <nav>
+                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="app-logo" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                    <li><a href="{% url 'profile' %}" class="btn-header">User page</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+    
+    <section>
+        
+        <div class="info-block">
+            <div class="circle-image"><img src="{%static '/images/user.jpg' %}" alt="Profile pic"></div>
+            <div class="info"><p>{{ user.email }}</p></div>
+            <div class="info"><p>{{ user.first_name }}</p></div>
+            <div class="info"><p>{{ user.second_name }}</p></div>
+            <div class="info2"><a href="{% url 'logout' %}" class="btn">Logout</a></div>
+        </div>
+
+    </section>
+</body>
+</html>
